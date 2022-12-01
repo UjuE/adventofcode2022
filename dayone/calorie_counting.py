@@ -22,7 +22,7 @@ def sum_it(calorie_totals, count):
 
 
 def use_input():
-    with open("input_data.txt", "r") as input_file:
+    with open("test_input_data.txt", "r") as input_file:
         input_data = input_file.read()
         most_calories = highest_calorie_total(string_to_list(input_data))
         print("answer 1", sum_it(most_calories, 1))
