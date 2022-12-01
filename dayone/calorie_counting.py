@@ -13,20 +13,12 @@ def highest_calorie_total(list_of_elves: list) -> list:
     return sorted(k, reverse=True)
 
 
-def sum_it(calorie_totals, count):
-    total = 0
-    for index in range(0, count):
-        total += calorie_totals[index]
-
-    return total
-
-
 def use_input():
     with open("test_input_data.txt", "r") as input_file:
         input_data = input_file.read()
         most_calories = highest_calorie_total(string_to_list(input_data))
-        print("answer 1", sum_it(most_calories, 1))
-        print("answer 2", sum_it(most_calories, 3))
+        print("answer 1", sum(most_calories[0:1]))
+        print("answer 2", sum(most_calories[0:3]))
 
 
 use_input()
