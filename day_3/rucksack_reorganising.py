@@ -33,7 +33,8 @@ def total_of_all_rucksacks(ruck_sacks):
                    ruck_sacks.splitlines()))
 
 
-def total_of_all_groups(elf_groups):
+def total_of_all_groups(ruck_sacks):
+    elf_groups = elf_groups_from(ruck_sacks)
     similarities = list(map(lambda group: check_group_similarities(group).pop(), elf_groups))
     return total_similarities_priorities(similarities)
 
@@ -42,7 +43,7 @@ def use_input():
     with open("input_data.txt", "r") as input_file:
         input_data = input_file.read()
         print("Answer 1.", total_of_all_rucksacks(input_data))
-        print("Answer 2.", total_of_all_groups(elf_groups_from(input_data)))
+        print("Answer 2.", total_of_all_groups(input_data))
 
 
 use_input()
