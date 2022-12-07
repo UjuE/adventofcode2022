@@ -34,7 +34,6 @@ class DirectorySystem:
         return self.__str__()
 
 
-
 def handle_change_directory(line, current_parent_directory, parents_map):
     new_directory = re.compile(r"\$ cd (.*)").search(line).group(1)
     if new_directory == "..":
