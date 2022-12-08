@@ -24,7 +24,7 @@ def scenic_score_in_x_path(x, y, grid):
     return left_visible_trees * right_visible_trees
 
 
-def scenic_score_in_y_path(x, y, grid, max_column_index):
+def scenic_score_in_y_path(x, y, grid):
     value = grid[x][y]
     top_trees = list(reversed(list(map(lambda row: row[y], grid[0:x]))))
     bottom_trees = list((map(lambda row: row[y], grid[x+1:])))
@@ -102,7 +102,7 @@ def answer_two(input_data):
     max_score = 0
     for y in range(max_column_index + 1):
         for x in range(max_row_length + 1):
-            scenic_score = scenic_score_in_y_path(x,y, the_grid, max_column_index) * \
+            scenic_score = scenic_score_in_y_path(x, y, the_grid) * \
                            scenic_score_in_x_path(x, y, the_grid)
             if scenic_score > max_score:
                 max_score = scenic_score
